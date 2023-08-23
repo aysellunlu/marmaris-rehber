@@ -1,0 +1,27 @@
+.header-bg{
+    position: fixed;
+    background-color: rgba(12, 91, 100, 0.484);
+    backdrop-filter: blur(3px);
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+.header-text{
+    color:#fff ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration : none ;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+}
+.header-text-secondary{
+    color:#fff ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration : none ;
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+}
