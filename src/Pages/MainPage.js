@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/MainPage.css";
 import Modal from "react-bootstrap/Modal";
 import BigChef from "../img/bigchefs.png";
+import selectOptions from "../Datas/SelectOption";
+import Datas from "../Datas/data.json";
+import WelcomeData from "../Datas/welcome.json";
+import axios from "axios";
 
 function MyVerticallyCenteredModal(props) {
+  const [items, setItems] = useState(Datas);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get('/api/data')
+      .then(response => setData(response.data))
+      .catch(error => console.error(error));
+  }, []);
+
   return (
     <Modal
       {...props}
@@ -17,88 +30,29 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <div className="modal-cards pb-4">
-          <div className="modal-card-header mt-4 mb-4">BigChefs Marmaris</div>
-          <div className="row">
-            <div className="col">
-              <img src={BigChef} width="100%" />
-            </div>
-            <div className="col">
-              <div className="modal-card-text mb-2">
-                <b>Service: </b> Service Inside
-              </div>
-              <div className="modal-card-text mb-2">
-                <b>Address: </b> Yat Limanı, Marmaris / Mugla
-              </div>
-              <div className="modal-card-text mb-2">
-                <b>Working Hours: </b> 10:00 - 23:59
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="modal-cards pb-4">
-          <div className="modal-card-header mt-4 mb-4">BigChefs Marmaris</div>
-          <div className="row">
-            <div className="col">
-              <img src={BigChef} width="100%" />
-            </div>
-            <div className="col">
-              <div className="modal-card-text mb-2">
-                <b>Service: </b> Service Inside
-              </div>
-              <div className="modal-card-text mb-2">
-                <b>Address: </b> Yat Limanı, Marmaris / Mugla
-              </div>
-              <div className="modal-card-text mb-2">
-                <b>Working Hours: </b> 10:00 - 23:59
+        {items &&
+          items.map((x) => (
+            <div className="modal-cards pb-4">
+              <div className="modal-card-header mt-4 mb-4">{x.name}</div>
+              <div className="row">
+                <div className="col">
+                  <img src={x.imageURL} width="100%" />
+                </div>
+                <div className="col">
+                  <div className="modal-card-text mb-2">
+                    <b>Service: </b> {x.servicesType}
+                  </div>
+                  <div className="modal-card-text mb-2">
+                    <b>Address: </b> {x.address}
+                  </div>
+                  <div className="modal-card-text mb-2">
+                    <b>Working Hours: </b> {x.workingHours}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="modal-cards pb-4">
-          <div className="modal-card-header mt-4 mb-4">BigChefs Marmaris</div>
-          <div className="row">
-            <div className="col">
-              <img src={BigChef} width="100%" />
-            </div>
-            <div className="col">
-              <div className="modal-card-text mb-2">
-                <b>Service: </b> Service Inside
-              </div>
-              <div className="modal-card-text mb-2">
-                <b>Address: </b> Yat Limanı, Marmaris / Mugla
-              </div>
-              <div className="modal-card-text mb-2">
-                <b>Working Hours: </b> 10:00 - 23:59
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="modal-cards pb-4">
-          <div className="modal-card-header mt-4 mb-4">BigChefs Marmaris</div>
-          <div className="row">
-            <div className="col">
-              <img src={BigChef} width="100%" />
-            </div>
-            <div className="col">
-              <div className="modal-card-text mb-2">
-                <b>Service: </b> Service Inside
-              </div>
-              <div className="modal-card-text mb-2">
-                <b>Address: </b> Yat Limanı, Marmaris / Mugla
-              </div>
-              <div className="modal-card-text mb-2">
-                <b>Working Hours: </b> 10:00 - 23:59
-              </div>
-            </div>
-          </div>
-        </div>
+          ))}
       </Modal.Body>
-      <Modal.Footer>
-        <button className="list-btn p-1" onClick={props.onHide}>
-          Close
-        </button>
-      </Modal.Footer>
     </Modal>
   );
 }
@@ -116,44 +70,32 @@ const MainPage = () => {
       </div>
       <div className="marmaris-center-container container-fluid">
         <div className="marmaris-center-header p-3 mt-4">
-          Welcome to Marmaris !
+          {WelcomeData[0].title}
         </div>
         <div className="main-page-text container-fluid">
-          Marmaris is the pearl of Turkey. You are so lucky to be here right
-          now. Enjoy your vacation. I can guide you if you choose what you want
-          to do.{" "}
+          {WelcomeData[0].text}
         </div>
-        <div className="select-container col-lg-8 col-sm-12 mt-2 row container">
+        <div className="select-container col-lg-8 col-sm-12 mt-3 row container">
           <select
-            class="form-select col-lg col-sm-12 mx-2 mt-2"
+            class="form-select col-lg col-sm-12 mx-2 mt-3"
             aria-label="Default select example"
           >
-            <option selected>Please select</option>
-            <option value="1">Restaurants & Cafes</option>
-            <option value="2">Coffee Shops</option>
-            <option value="3">Shopping Center</option>
-            <option value="4">Beaches</option>
-            <option value="5">Water Parks</option>
-            <option value="6">Bars</option>
-            <option value="7">Night Clubs</option>
-            <option value="8">Adventure Parks</option>
-            <option value="9">Nature Parks</option>
-            <option value="10">Boat Trips</option>
-            <option value="10">Others...</option>
+            {selectOptions &&
+              selectOptions.map((opt) => (
+                <option value={opt.value}>{opt.label}</option>
+              ))}
           </select>
           <button
-            className="list-btn mt-2 py-2 col-lg-3 col-sm-12 mx-2"
+            className="list-btn mt-3 py-2 col-lg-3 col-sm-12 mx-2"
             onClick={() => setModalShow(true)}
           >
             List
           </button>
         </div>
-        <>
-          <MyVerticallyCenteredModal
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-          />
-        </>
+        <MyVerticallyCenteredModal
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+        />
       </div>
     </div>
   );

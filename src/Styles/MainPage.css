@@ -89,3 +89,11 @@
 .modal-cards{
 border-bottom: rgb(231, 231, 231) 1px solid;
 }
+.modal-card-text{
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+}
+.h4{
+    font-family: 'Outfit', sans-serif;
+}
