@@ -125,7 +125,7 @@ const MainPage = () => {
               ))}
           </select>
           <button
-            className="list-btn mt-3 py-2 col-lg-3 col-sm-12 mx-2"
+            className="list-btn mt-3 py-2 col-lg-3 col-sm-12 mx-2 mb-4"
             onClick={() => setModalShow(true)}
           >
             LIST
