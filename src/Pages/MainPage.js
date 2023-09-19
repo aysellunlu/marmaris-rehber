@@ -9,15 +9,15 @@ import SearchIcon from "../Icons/SearchIcon";
 const MainPage = () => {
   const [modalShow, setModalShow] = React.useState(false);
   const [selectedValue, setSelectedValue] = useState("");
+  const [items, setItems] = useState(Datas);
+  const [data, setData] = useState([]);
   const handleSelectChange = (event) => {
     setSelectedValue(event.target.value);
   };
-  const selectedOption = selectOptions.find(
+  const selectedOption = items.find(
     (option) => option.value === selectedValue
   );
   function MyVerticallyCenteredModal(props) {
-    const [items, setItems] = useState(Datas);
-    const [data, setData] = useState([]);
 
 
     //BURASI ÇIKTI GÖRMEK İÇİN, GEÇİCİ !!!!!! DÜZENLEEEE

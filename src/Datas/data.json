@@ -1,36 +1,39 @@
 [
-    {
+  {
+    "value": " 1",
+    "label": "Restaurants & Cafes",
+    "details": [
+      {
         "id": 1,
-        "categories" :1,
+        "categories": 1,
         "name": "BigChefs Marmaris",
         "servicesType": "Service Inside",
         "address": "Yat Limanı, Marmaris / Mugla",
-        "workingHours" : "08:00-00:00",
+        "workingHours": "08:00-00:00",
         "phoneNumbers": "+9054323412",
         "imageURL": "https://lh3.googleusercontent.com/p/AF1QipMsRiOBOIiD3sB5zACEn0e5Yw3941zHzFyuMbnW=s1360-w1360-h1020"
-    },
-    {
-        "id": 2,
-        "categories" :1,
-        "name": "Rota Barış Usta",
-        "servicesType": "Service Inside",
-        "address": "Yat Limanı, Marmaris / Mugla",
-        "workingHours" : "08:00-00:00",
-        "phoneNumbers": "+9054323412",
-        "imageURL": "https://lh3.googleusercontent.com/p/AF1QipMvya63mHyhoE9dqfIadV53R35nmvh3CzE-ViLY=s1360-w1360-h1020"
-    },
-    {
-        "id": 3,
-        "categories" :1,
-        "name": "Roberts Cafe",
-        "servicesType": "Service Inside",
-        "address": "Yat Limanı, Marmaris / Mugla",
-        "workingHours" : "08:00-00:00",
-        "phoneNumbers": "+9054323412",
-        "imageURL": "https://lh3.googleusercontent.com/p/AF1QipNb-n0yc7gALe4LTy3YLrFDfIuuVYrT7saodlkU=s1360-w1360-h1020"
-    }
+      }
+    ]
+  },
 
-
-    
-   
+  {
+    "id": 2,
+    "categories": 1,
+    "name": "Rota Barış Usta",
+    "servicesType": "Service Inside",
+    "address": "Yat Limanı, Marmaris / Mugla",
+    "workingHours": "08:00-00:00",
+    "phoneNumbers": "+9054323412",
+    "imageURL": "https://lh3.googleusercontent.com/p/AF1QipMvya63mHyhoE9dqfIadV53R35nmvh3CzE-ViLY=s1360-w1360-h1020"
+  },
+  {
+    "id": 3,
+    "categories": 1,
+    "name": "Roberts Cafe",
+    "servicesType": "Service Inside",
+    "address": "Yat Limanı, Marmaris / Mugla",
+    "workingHours": "08:00-00:00",
+    "phoneNumbers": "+9054323412",
+    "imageURL": "https://lh3.googleusercontent.com/p/AF1QipNb-n0yc7gALe4LTy3YLrFDfIuuVYrT7saodlkU=s1360-w1360-h1020"
+  }
 ]
