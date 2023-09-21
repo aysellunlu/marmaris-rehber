@@ -14,12 +14,8 @@ const MainPage = () => {
   const handleSelectChange = (event) => {
     setSelectedValue(event.target.value);
   };
-  const selectedOption = items.find(
-    (option) => option.value === selectedValue
-  );
+  const selectedOption = items.find((option) => option.value === selectedValue);
   function MyVerticallyCenteredModal(props) {
-
-
     //BURASI ÇIKTI GÖRMEK İÇİN, GEÇİCİ !!!!!! DÜZENLEEEE
 
     const selectedHeader = () => {
@@ -65,7 +61,7 @@ const MainPage = () => {
         <Modal.Body>
           {items &&
             items.map((x) => (
-              <div className="modal-cards pb-4" >
+              <div className="modal-cards pb-4">
                 <div className="modal-card-header mt-4 mb-4">{x.name}</div>
                 <div className="row">
                   <div className="col">
@@ -89,7 +85,6 @@ const MainPage = () => {
       </Modal>
     );
   }
-
   console.log("selected value :", selectedValue);
   return (
     <div className=" main-content">
